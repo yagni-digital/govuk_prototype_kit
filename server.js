@@ -65,8 +65,14 @@ app.get(/^\/([^.]+)$/, function (req, res) {
 
 	res.render(path, function(err, html) {
 		if (err) {
-			console.log(err);
-			res.sendStatus(404);
+			res.render(path + "/index", function(err, html) {
+        if (err) {
+          console.log(err);
+          res.sendStatus(404);
+        } else {
+          res.end(html);
+        }
+      });
 		} else {
 			res.end(html);
 		}
