@@ -1,8 +1,8 @@
-{{<govuk_template}}
+{% extends "govuk_template.html" %}
 
-{{$head}}
-  {{>includes/elements_head}}
-{{/head}}
+{% block head %}
+  {% include "includes/elements_head.html" %}
+{% endblock %}
 
 {% block content %}
 <main id="content" role="main">
@@ -59,4 +59,3 @@
 </main><!-- / #page-container -->
 {% endblock %}
 
-{{/govuk_template}}

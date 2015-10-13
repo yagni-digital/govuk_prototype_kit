@@ -65,10 +65,10 @@ app.get(/^\/([^.]+)$/, function (req, res) {
 
 	res.render(path, function(err, html) {
 		if (err) {
-			res.render(path + "/index", function(err, html) {
-        if (err) {
+			res.render(path + "/index", function(err2, html) {
+        if (err2) {
           console.log(err);
-          res.sendStatus(404);
+          res.status(404).send(err).send(err2);
         } else {
           res.end(html);
         }
