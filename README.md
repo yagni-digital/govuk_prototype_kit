@@ -20,7 +20,7 @@ You may already have it, try:
 node --version
 ```
 
-Your version needs to be at least v0.10.0.
+Your version should be 4.2.2.
 
 If you don't have Node, download it here: [http://nodejs.org/](http://nodejs.org/).
 
@@ -51,6 +51,14 @@ node start.js
 ```
 
 Go to [localhost:3000](http://localhost:3000) in your browser.
+
+If you want to view multiple prototypes at the same time you can give them unique port numbers, like this:
+
+```
+PORT=3005 node start.js
+```
+
+To change the port number permanently, edit the port variable in /server.js. 
 
 #### Hot reload
 
