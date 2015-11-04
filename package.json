@@ -24,7 +24,6 @@
     "grunt-sass": "^1.1.0",
     "grunt-text-replace": "0.3.12",
     "minimist": "0.0.8",
-    "node-sass": "3.3.3",
     "readdir": "0.0.6",
     "serve-favicon": "2.3.0"
   }
