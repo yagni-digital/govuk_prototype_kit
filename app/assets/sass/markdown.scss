@@ -1,0 +1,35 @@
+// Styles for HTML that's been converted from markdown
+
+.markdown{
+
+  h1{
+    @extend .heading-large
+  }
+
+  h2{
+    @extend .heading-medium
+  }
+
+  h3{
+    @extend .heading-small
+  }
+
+  ul{
+    @extend .list-bullet
+  }
+
+  ol{
+    @extend .list-number
+  }
+
+  code{
+    @extend .code
+  }
+
+  pre code{
+    display: block;
+    margin-bottom: $gutter;
+    padding: 10px;
+  }
+
+}
