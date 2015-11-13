@@ -21,11 +21,16 @@ if (env === 'production') {
   app.use(basicAuth(username, password));
 }
 
+
+
+
 // Application settings
 app.engine('html', require(__dirname + '/lib/template-engine.js').__express);
 app.set('view engine', 'html');
 app.set('vendorViews', __dirname + '/govuk_modules/govuk_template/views/layouts');
 app.set('views', path.join(__dirname, '/app/views'));
+
+
 
 // Middleware to serve static assets
 app.use('/public', express.static(__dirname + '/public'));
@@ -69,6 +74,19 @@ app.get(/^\/([^.]+)$/, function (req, res) {
 	});
 
 });
+
+
+// convert markdown docs to HTML
+
+app.use(require('express-markdown')({
+  // directory where markdown files are stored
+  directory: __dirname + '/docs', 
+  // view to use for rendering markdown file
+  view: 'markdown',
+  // name of markdown variable passed in the context when rendering
+  variable: 'markdown'
+}));
+
 
 // start the app
 
