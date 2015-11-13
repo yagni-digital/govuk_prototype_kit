@@ -3,14 +3,18 @@
 .markdown{
 
   h1{
-    @extend .heading-large
+    @extend .heading-xlarge
   }
 
   h2{
-    @extend .heading-medium
+    @extend .heading-large
   }
 
   h3{
+    @extend .heading-medium
+  }
+
+  h4{
     @extend .heading-small
   }
 
