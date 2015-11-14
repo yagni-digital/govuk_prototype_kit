@@ -80,7 +80,7 @@ app.get(/^\/([^.]+)$/, function (req, res) {
 
 app.use(require('express-markdown')({
   // directory where markdown files are stored
-  directory: __dirname + '/docs', 
+  directory: __dirname + '/', 
   // view to use for rendering markdown file
   view: 'markdown',
   // name of markdown variable passed in the context when rendering
