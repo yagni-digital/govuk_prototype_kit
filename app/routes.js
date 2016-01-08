@@ -29,7 +29,7 @@ router.get('/question-2', function (req, res) {
 
 router.get('/check-your-answers-page', function (req, res) {
 
-  var feat = i;
+  var feat = req.query.feat;
 
   res.render('check-your-answers-page', { 'feat' : feat });
   
