@@ -20,7 +20,7 @@ router.get('/question-2', function (req, res) {
   if (eligible == "Yes"){
     res.render('question-2');
   } else {
-    res.render('ineligible');
+    res.redirect('ineligible');
   }
   
 });
