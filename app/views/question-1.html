@@ -1,0 +1,48 @@
+{{<layout}}
+
+{{$pageTitle}}Question page{{/pageTitle}}
+
+{{$content}}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/start-page">Back</a>
+
+      <h1 class="heading-large">
+        Can you juggle more than 5 balls?
+      </h1>
+
+      <p>You must be able to juggle them for at least 5 minutes without dropping one.</p>
+
+      <form class="form" action="question-2">
+
+        <fieldset class="inline form-group">
+
+        <legend class="visuallyhidden">Do you already have a personal user account?</legend>
+
+        <label class="block-label" for="radio-inline-1">
+          <input id="radio-inline-1" type="radio" name="eligible" value="Yes">
+          Yes
+        </label>
+        <label class="block-label" for="radio-inline-2">
+          <input id="radio-inline-2" type="radio" name="eligible" value="No">
+          No
+        </label>
+
+        </fieldset>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{{/content}}
+
+{{/layout}}
