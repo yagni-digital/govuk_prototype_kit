@@ -11,7 +11,7 @@ router.get('/examples/template-data', function (req, res) {
   res.render('examples/template-data', { 'name' : 'Foo' });
 });
 
-// Ineligible users are routed to '/ineligble.html'
+// Ineligible users are routed to '/ineligible.html'
 
 router.get('/question-2', function (req, res) {
 
@@ -29,7 +29,7 @@ router.get('/question-2', function (req, res) {
 
 router.get('/check-your-answers-page', function (req, res) {
 
-  var feat = req.query.feat;
+  var feat = i;
 
   res.render('check-your-answers-page', { 'feat' : feat });
   
