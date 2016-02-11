@@ -1,8 +1,10 @@
-{{<layout}}
+{% extends "layout.html" %}
 
-{{$pageTitle}} Confirmation page example {{/pageTitle}}
+{% block page_title %}
+  Confirmation page example
+{% endblock %}
 
-{{$content}}
+{% block content %}
 
 <main id="content" role="main">
 
@@ -10,14 +12,12 @@
     <div class="column-two-thirds">
 
       <div class="govuk-box-highlight">
-        <h1 class="bold-large">Application successful</h1>
+        <h1 class="bold-large">Application complete</h1>
         <p>
-          Your licence number is <br>
+          Your reference number is <br>
           <strong class="heading-medium">HDJ2123F</strong>
         </p>
       </div>
-
-      <p>We have sent you a confirmation email.</p>
 
       <p>Keep your licence on you at all times and show it to any juggling inspectors who ask for it.</p>
 
@@ -25,12 +25,9 @@
       <p>Your details have been added to the <a href="">Jugglers register</a>.</p>
       <p><a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/feedback-pages.html">What did you think of this service?</a> (takes 30 seconds)</p>
 
-
     </div>
   </div>
 
 </main>
 
-{{/content}}
-
-{{/layout}}
+{% endblock %}
