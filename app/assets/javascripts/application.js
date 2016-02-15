@@ -124,4 +124,10 @@ $(document).ready(function() {
   toggleContent.showHideRadioToggledContent();
   toggleContent.showHideCheckboxToggledContent();
 
+  $(".lightbox__outer.hidden").removeClass("hidden");
+  $(".lightbox__outer .button").click(function(e){
+    e.preventDefault();
+    $(".lightbox__outer").addClass("hidden");
+  });
+
 });
