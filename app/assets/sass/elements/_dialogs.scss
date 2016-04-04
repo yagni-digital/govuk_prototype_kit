@@ -47,7 +47,7 @@ dialog + .backdrop {
 $dialog_backdrop_colour: rgba(0,0,0,0.8);
 $dialog_border: 5px solid black;
 
-// Default styles and non-js
+// Default styles - non-js
 dialog {
   display:block;
   position: inherit;
@@ -95,7 +95,7 @@ dialog[open] {
   display: none;
 }
 
-  // JS Enabled
+// JS Enabled
 .js-enabled {
   .dialog-button {
     display: block;
