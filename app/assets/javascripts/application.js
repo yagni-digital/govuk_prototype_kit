@@ -130,11 +130,11 @@ $(document).ready(function() {
   // Register dialog for polyfill
   dialogPolyfill.registerDialog(prototype_warning_dialog);
 
-  // var prototype_warning = localStorage.getItem("prototype_warning_dialog_seen");
   var prototype_warning = GOVUK.cookie('prototype_warning_dialog_seen');
 
   if (prototype_warning != 'true') {
     console.log("Showing prototype warning");
+    $("body").addClass("dialog-is-open");
     prototype_warning_dialog.showModal();
   }
 
@@ -143,6 +143,10 @@ $(document).ready(function() {
     prototype_warning_dialog.close();
     // Only set cookie if button used to dismiss, not escape.
     GOVUK.cookie('prototype_warning_dialog_seen', 'true', { expires: 30 });
+  });
+
+  prototype_warning_dialog.addEventListener('close', function() {
+    $("body").removeClass("dialog-is-open");
   });
 
 

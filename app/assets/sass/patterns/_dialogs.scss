@@ -109,3 +109,8 @@ dialog[open] {
   }
 }
 
+// Stop background scrolling while dialog open.
+.dialog-is-open {
+  overflow: hidden;
+  position: fixed;
+}
