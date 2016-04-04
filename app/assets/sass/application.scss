@@ -41,29 +41,20 @@
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
 #prototype_warning_dialog {
-  // don't display if no-js
+  // Don't display warning if user doesn't have js
   display: none;
-
-  background: $govuk-blue;
-  
-  h1, p {
-    color: white;
-  }
 
   p {
     @include copy-19;
   }
 
   .dialog-button.dialog-close {
-    background-color: white;
     font-weight: 700;
     padding: 15px 30px;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
-    color: $govuk-blue;
   }
 }
 
-// Display only if js available
+// Display if js available
 .js-enabled #prototype_warning_dialog[open] {
   display: block;
 }
