@@ -40,42 +40,30 @@
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
-.lightbox__outer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-}
+#prototype_warning_dialog {
+  // don't display if no-js
+  display: none;
 
-.lightbox__inner {
   background: $govuk-blue;
-  margin: 50px auto;
-  padding: 30px;
-  max-width: 500px;
+  
   h1, p {
     color: white;
   }
 
-  h1 {
-    @include bold-36;
-    margin-top: 0;
-  }
-
   p {
-    @include core-19;
+    @include copy-19;
   }
 
-  strong {
-    font-weight: 700;
-  }
-
-  a.button {
+  .dialog-button.dialog-close {
     background-color: white;
     font-weight: 700;
     padding: 15px 30px;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.8);
     color: $govuk-blue;
   }
+}
+
+// Display only if js available
+.js-enabled #prototype_warning_dialog[open] {
+  display: block;
 }
