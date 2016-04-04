@@ -130,7 +130,9 @@ $(document).ready(function() {
   // Register dialog for polyfill
   dialogPolyfill.registerDialog(prototype_warning_dialog);
 
-  var prototype_warning = localStorage.getItem("prototype_warning_dialog_seen");
+  // var prototype_warning = localStorage.getItem("prototype_warning_dialog_seen");
+  var prototype_warning = Cookies.get('prototype_warning_dialog_seen');
+
   if (prototype_warning != 'true') {
     console.log("Showing prototype warning");
     prototype_warning_dialog.showModal();
@@ -138,10 +140,10 @@ $(document).ready(function() {
 
   $("#prototype_warning_dialog .dialog-close").click(function(e){
     console.log("Prototype warning dialog dismissed");
-    // Only set if button used to dismiss, not esc
     prototype_warning_dialog.close();
-    localStorage.setItem("prototype_warning_dialog_seen", true);
-    
+    // Only set cookie if button used to dismiss, not escape.
+    Cookies.set('prototype_warning_dialog_seen', 'true', { expires: 30 });
   });
+
 
 });
