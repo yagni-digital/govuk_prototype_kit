@@ -35,5 +35,8 @@
     "prompt": "^0.2.14",
     "readdir": "0.0.6",
     "serve-favicon": "2.3.0"
+  },
+  "devDependencies": {
+    "kss": "^3.0.0-beta.14"
   }
 }
