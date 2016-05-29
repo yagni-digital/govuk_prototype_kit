@@ -1,3 +1,3 @@
-# Styleguide
+# Overview
 
-Home page
+This is the style guide home page - the content is in `homepage.md`.
