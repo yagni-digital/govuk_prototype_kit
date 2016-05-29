@@ -27,6 +27,13 @@
     position: relative;
     display: block;
 
+    color: $link-colour;
+
+    &:hover{
+      background: $highlight-colour;
+      //text-decoration: underline;
+    }
+
 
     padding: 10px 0;
     border-top: 1px solid $border-colour;
@@ -106,6 +113,10 @@
 
   .kss-title {
     margin-bottom: 0;
+  }
+
+  .kss-title__ref {
+    margin-right: 10px;  
   }
 
   .kss-title--level-1{
