@@ -20,6 +20,7 @@
 
   .kss-nav__menu {
     list-style-type: none;
+    border-bottom: 1px solid $border-colour;
   }
 
   .kss-nav__menu-link {
@@ -28,7 +29,7 @@
 
 
     padding: 10px 0;
-    border-bottom: 1px solid $border-colour;
+    border-top: 1px solid $border-colour;
     text-decoration: none;
 
     &:before {
@@ -43,12 +44,8 @@
       }
     }
 
-    &.is-in-viewport:before {
-      /*
-      background-color: #000;
-      width: 5px;
-      transition: background-color .4s, width .6s;
-      */
+    &.is-in-viewport {
+      //background: $highlight-colour;
     }
   }
 
@@ -61,25 +58,25 @@
       margin: 0;
       padding: 0;
 
-      // @TODO: The ul is output even when there are no children. Fix this, so
-      // we can put these :first-child and :last child styles back on the ul.
-      li:first-child {
-        //margin-top: 10px;
-        //border-top: 1px solid $border-colour;
-        //padding: 10px 0 0;
+      .kss-nav__menu-link {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .kss-nav__ref {
+        width: 20px;
       }
 
       li:last-child {
-        //margin-bottom: 10px;
-        //border-bottom: 1px solid $border-colour;
-        //padding: 0 0 10px;
+        //padding-bottom: 20px;
       }
+
     }
   }
 
   .kss-nav__ref {
 
-    //width: 20px;
+    width: 10px;
     display: inline-block;
     margin-right: 10px;
     color: $text-colour;
