@@ -1,15 +1,5 @@
 // Buttons
-//
-// Use buttons to move though a transaction, aim to use only one button per page.
-//
-// .disabled - Use with caution.
-//
-// Markup:
-// <input class="button {{modifier_class}}" type="submit" value="Save and continue">
-// <a href="#" class="button {{modifier_class}}">Save and continue</a>
-// <button class="button {{modifier_class}}">Save and Continue</button>
-//
-// Styleguide 2.0.0
+// ==========================================================================
 
 .button {
   @include button ($button-colour);
@@ -31,6 +21,7 @@
   outline: 3px solid $focus-colour;
 }
 
+// Disabled buttons
 .button[disabled="disabled"] {
   background: $button-colour;
 }
@@ -39,15 +30,7 @@
   outline: none;
 }
 
-// Start now button
-//
-// Launch your service with a Start now button.
-//
-// Markup:
-// <a class="button button-start" href="#" role="button">Start now</a>
-//
-// Styleguide 2.1.0
-
+// Start now buttons
 .button-start,
 .button-get-started {
   @include bold-24;
