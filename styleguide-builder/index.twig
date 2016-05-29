@@ -63,10 +63,10 @@
         <{{ sectionElement }} id="kssref-{{ section.referenceURI }}" class="kss-section kss-section--depth-{{ section.depth }}">
 
           {% set headerElement = (section.depth > 6) ? 'h6' : 'h' ~ section.depth %}
-          <{{ headerElement }} class="heading-large kss-title--level-{{ section.depth }}">
+          <{{ headerElement }} class="kss-title--level-{{ section.depth }}">
             <a class="kss-title__permalink" href="#kssref-{{ section.referenceURI }}">
-              <span class="heading-secondary">
-                Section {{ section.referenceNumber }}
+              <span class="kss-title__ref">
+                {{ section.referenceNumber }}
                 <span class="kss-title__permalink-hash">
                   {{ hasNumericReferences ? '#permalink' : section.reference }}
                 </span>
@@ -104,7 +104,9 @@
 
           {% if section.example %}
 
+<!--
             <h2 class="heading-medium">Example{% if section.modifiers is not empty %}s{% endif %}</h2>
+          -->
 
             <div class="kss-modifier__wrapper">
 

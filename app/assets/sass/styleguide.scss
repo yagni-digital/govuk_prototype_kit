@@ -5,6 +5,7 @@
 @import "elements/_helpers";
 @import "elements/_elements-typography";
 @import "_code-highlighting";
+@import "examples";
 
 
 // ------------------------------------------------------------------------------
@@ -109,33 +110,55 @@
   .kss-title {
     margin-bottom: 0;
   }
-  .kss-title__ref {
-    display: block;
-    color: #666;
 
-    &:before {
-      content: 'Section ';
+  .kss-title--level-1{
+    @extend .heading-large;
+
+    .kss-title__ref {
+      @extend .heading-secondary;
+      &:before {
+        content: 'Section ';
+      }    
     }
-  }
-  .kss-title__permalink {
-    display: block;
-    color: #000;
-    text-decoration: none;
 
-    &:hover,
-    &:focus,
-    &:active {
+    .kss-title__permalink {
+      &:hover,
+      &:focus,
+      &:active {
 
-      @media screen and (min-width: 607px) {
-        .kss-title__permalink-hash {
-          display: inline;
+        @media screen and (min-width: 607px) {
+          .kss-title__permalink-hash {
+            display: inline;
+          }
         }
       }
     }
   }
+
+  .kss-title--level-2{
+    @extend .heading-medium
+  }
+
+  .kss-title--level-3,
+  .kss-title--level-4,
+  .kss-title--level-5,
+  .kss-title--level-6{
+    @extend .heading-small
+  }
+
+  .kss-title__permalink {
+    display: block;
+    color: #000;
+    text-decoration: none;
+  }
+
   .kss-title__permalink-hash {
     display: none;
     color: #ccc;
+  }
+
+  .kss-description{  
+    margin-bottom: $gutter;
   }
 
   .kss-parameters {
@@ -192,11 +215,12 @@
   }
 
   .kss-markup {
-    margin: -1px 0 $gutter 0;
+    margin: -1px 0 10px 0;
   }
 
   .kss-source {
     font-size: 80%;
+    color: $secondary-text-colour;
   }
 
   .kss-github {
