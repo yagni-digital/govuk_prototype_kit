@@ -24,6 +24,12 @@
   }
 }
 
+// Styling for product page
+
+.design-update {
+  font-size: 14px;
+}
+
 #product-style {
   background-color: #005EA5;
   color: #ffffff; 
@@ -31,6 +37,19 @@
 
 #product-style a {
   color: #ffffff; 
+}
+
+// Start now buttons
+.button-start {
+  @include bold-24;
+  background-image: file-url("/app/assets/images/icon-pointer-blue.png");
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+
+  @include device-pixel-ratio {
+    background-image: file-url("/app/assets/images/icon-pointer-blue.png");
+    background-size: 30px 19px;
+  }
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
