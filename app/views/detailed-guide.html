@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<link href="/public/stylesheets/gov-uk-template.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/core-layout.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main">
+  <div class="grid-row">
+
+    <div class="govuk-title length-long">
+      <h1>Test</h1>
+    </div>
+
+    <div class="column-one-third">
+      &nbsp;
+    </div>
+    <div class="column-two-thirds">
+
+      {{markdownHTML | safe}}
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
