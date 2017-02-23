@@ -1,24 +1,23 @@
 .org-logo {
-    float: left;
-    border: 0px none rgb(11, 12, 12);
+  border: 0px none rgb(11, 12, 12);
 
-    .logo {
-        display: block;
-        background: rgba(0, 0, 0, 0) url("https://assets.publishing.service.gov.uk/government/assets/crests/org_crest_27px-916806dcf065e7273830577de490d5c7c42f36ddec83e907efe62086785f24fb.png") no-repeat scroll 9px 0% / auto 40px padding-box border-box;
-        background-size:22px;
-        border-left: 3px solid rgb(0, 163, 59);
-        padding: 15px 0px 0px 10px;
-    }
-    .text {
-        position: relative;
-        top: 5px;
-        font: 14px Helvetica;
-        display: block;
-        float: none;
-    }
-    br {
-        height: 2px
-    }
+  .logo {
+    display: block;
+    background: rgba(0, 0, 0, 0) url("https://assets.publishing.service.gov.uk/government/assets/crests/org_crest_27px-916806dcf065e7273830577de490d5c7c42f36ddec83e907efe62086785f24fb.png") no-repeat scroll 9px 0% / auto 40px padding-box border-box;
+    background-size:22px;
+    border-left: 3px solid rgb(0, 163, 59);
+    padding: 15px 0px 0px 10px;
+  }
+  .text {
+    position: relative;
+    top: 5px;
+    font: 14px Helvetica;
+    display: block;
+    float: none;
+  }
+  br {
+    height: 2px
+  }
 
 }
 
