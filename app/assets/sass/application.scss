@@ -1,6 +1,7 @@
 $path: "/public/images/";
 @import 'govuk-elements';
 
+@import 'components';
 @import 'components/org-logo';
 @import 'components/titles';
 @import 'components/dates';
@@ -8,12 +9,5 @@ $path: "/public/images/";
 @import 'components/release-logo';
 @import 'components/metadata';
 
-
 @import 'movement';
 
-.component {
-  display: block;
-  clear: left;
-  overflow: hidden;
-  float: none;
-}
