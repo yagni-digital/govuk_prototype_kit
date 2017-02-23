@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+mega page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+  <div class="column-full">
+    {% include "components/breadcrumbs.html" %}
+  </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <div class="push-top">
+        {% include "components/org-logo.html" %}
+      </div>
+      {% include "components/titles.html" %}
+      {% include "components/dates.html" %}
+      <div class="push-top-big push-bottom-big">
+        {% include "components/lede.html" %}
+      </div>
+      <div class="push-bottom-big">
+        {% include "components/release-logo.html" %}
+      </div>
+        {% include "components/metadata.html" %}
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
