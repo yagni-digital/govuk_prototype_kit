@@ -1,0 +1,22 @@
+.captioned-image {
+  padding-top:15px;
+  display: block;
+  overflow: hidden;
+
+  p, img {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    margin-top: 0;
+  }
+
+  img {
+    padding-right: 30px;
+  }
+
+  p {
+    border-top: 1px solid black;
+    font-size: 16px;
+    padding-top:15px;
+  }
+}

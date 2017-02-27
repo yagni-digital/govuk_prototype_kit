@@ -1,7 +1,6 @@
 $path: "/public/images/";
 @import 'govuk-elements';
 
-@import 'components';
 
 @import 'components/org-logo';
 @import 'components/titles';
@@ -9,6 +8,8 @@ $path: "/public/images/";
 @import 'components/lede';
 @import 'components/release-logo';
 @import 'components/metadata';
-
+@import 'components/contents-list';
+@import 'components/captioned-image';
+@import 'components/govspeak-block';
 @import 'movement';
 

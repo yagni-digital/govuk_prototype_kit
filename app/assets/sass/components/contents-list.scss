@@ -1,0 +1,15 @@
+.contents-list {
+  p {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  li {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    &:before {
+      content: "—";
+      padding-right: 5px;
+    }
+  }
+}
