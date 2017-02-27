@@ -1,0 +1,20 @@
+.metadata-dates {
+  .date,
+  .time {
+    font-weight: bold;
+    display: block;
+  }
+  p,a {
+    font-size: 16px;
+  }
+
+  dl {
+    padding-top: 30px;
+    border-top: 2px solid grey;
+    overflow: hidden;
+  }
+
+  dt, dd {
+    margin-bottom: 30px;
+  }
+}

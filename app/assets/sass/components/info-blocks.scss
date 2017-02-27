@@ -1,0 +1,30 @@
+.info-blocks {
+  li {
+    border: 2px solid blue;
+    margin-bottom: 30px;
+  }
+
+  li.bold-colours {
+    background: blue;
+    * {
+      color: white;
+    }
+  }
+  li {
+    overflow: hidden;
+    padding: 30px;
+  }
+
+  h2:first-of-type {
+    margin-top: 0;
+  }
+
+  h2.with-sub-text {
+    margin-bottom:0 ;
+  }
+
+  h2.with-sub-text + * {
+    margin-top: 0;
+  }
+
+}
