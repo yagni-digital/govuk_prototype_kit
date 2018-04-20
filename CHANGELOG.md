@@ -1,4 +1,28 @@
-# Unreleased
+# 6.4.0
+
+New features:
+
+- [#499 Improve installation guidance on software required](https://github.com/alphagov/govuk_prototype_kit/pull/499)
+- [#485 Add meta description for better descriptions in Google](https://github.com/alphagov/govuk_prototype_kit/pull/485)
+- [#469 Add Google tag manager tracking](https://github.com/alphagov/govuk_prototype_kit/pull/469)
+- [#461 Update docs for node 8 LTS](https://github.com/alphagov/govuk_prototype_kit/pull/461)
+- [#458 Update for those not using the command line](https://github.com/alphagov/govuk_prototype_kit/pull/458)
+- [#437 Update frontend toolkit and use the details polyfill from there](https://github.com/alphagov/govuk_prototype_kit/pulls/437)
+- [#438 Update testing matrix to test against latest LTS](https://github.com/alphagov/govuk_prototype_kit/pulls/438)
+
+Bug fixes:
+
+- [#498 Add data attributes to fix tracking](https://github.com/alphagov/govuk_prototype_kit/pull/498)
+- [#491 Remove redundant Google Analytics](https://github.com/alphagov/govuk_prototype_kit/pull/491)
+- [#451 Clean up typos, formatting, etc](https://github.com/alphagov/govuk_prototype_kit/pull/451)
+- [#453 Clean up examples](https://github.com/alphagov/govuk_prototype_kit/pull/453)
+- [#450 De-duplicate code to stop search indexing](https://github.com/alphagov/govuk_prototype_kit/pull/450)
+- [#449 Refactor checked function into utils, remove need for middleware](https://github.com/alphagov/govuk_prototype_kit/pulls/449)
+- [#443 Group and alphabetise requires, use const instead of var  enhancemen](https://github.com/alphagov/govuk_prototype_kit/pulls/443)
+- [#446 fix typo](https://github.com/alphagov/govuk_prototype_kit/pulls/446)
+- [#442 Fix favicon](https://github.com/alphagov/govuk_prototype_kit/pulls/442)
+- [#432 Revert "Fix broken images"](https://github.com/alphagov/govuk_prototype_kit/pulls/432)
+- [#433 Disable package-lock.json](https://github.com/alphagov/govuk_prototype_kit/pulls/433)
 
 Bug fixes:
 
@@ -154,7 +178,7 @@ All changes:
 - #175 Bump govuk frontend toolkit to 4.10.0
 - #172 Fix closing </span> element
 - #169 Fix broken url and typo
-- #166 Stop prototypes being indexed by search engines.
+- #166 Stop prototypes being indexed
 - #165 Redirect .html and .htm if in url path
 - #164 Fix link to developer install instructions
 - #162 Have kit self-identify as being the GOV.UK Prototype kit
@@ -202,7 +226,7 @@ To convert your old prototype pages for use with this version, [follow this guid
 - Add Check Your Answers page (#36)
 - Add confirmation page (#35)
 - Upgraded to Express 4 (#32)
-- Add jQuery to the kit, so it's available on all pages by default (#18)
+- Add jQuery to the kit, so it's available on all pages
 - Add page without header and footer (#12)
 
 # 1.0.0
