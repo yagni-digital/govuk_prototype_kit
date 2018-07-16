@@ -17,6 +17,7 @@ const documentationRoutes = require('./docs/documentation_routes.js')
 const packageJson = require('./package.json')
 const routes = require('./app/routes.js')
 const utils = require('./lib/utils.js')
+const pluginDetection = require('./lib/plugin-detection.js')
 
 const app = express()
 const documentationApp = express()
@@ -68,12 +69,14 @@ if (env === 'production' && useAuth === 'true') {
 }
 
 // Set up App
-var appViews = [
+var appViews = pluginDetection.getMergedArraySync('nunjucksDirs', pluginDetection.scopeFilePathsToModule).concat([
   path.join(__dirname, '/node_modules/govuk-frontend/'),
   path.join(__dirname, '/node_modules/govuk-frontend/components'),
   path.join(__dirname, '/app/views/'),
   path.join(__dirname, '/lib/')
-]
+])
+
+console.log('appViews after plugin detection', appViews)
 
 var nunjucksAppEnv = nunjucks.configure(appViews, {
   autoescape: true,
