@@ -74,8 +74,6 @@ var appViews = pluginDetection.getMergedArraySync('nunjucksDirs', pluginDetectio
   path.join(__dirname, '/lib/')
 ])
 
-console.log('appViews after plugin detection', appViews)
-
 var nunjucksAppEnv = nunjucks.configure(appViews, {
   autoescape: true,
   express: app,
@@ -91,21 +89,21 @@ app.set('view engine', 'html')
 
 // Middleware to serve static assets
 app.use('/public', express.static(path.join(__dirname, '/public')))
-app.use('/assets', express.static(path.join(__dirname, 'node_modules', 'govuk-frontend', 'assets')))
 
 // Serve govuk-frontend in /public
-pluginDetection.getMergedArraySync('scripts', pluginDetection.transform.privateAndPublicScriptNames).forEach(paths => {
-  app.use(paths.publicPath, express.static(paths.privatePath))
-})
+pluginDetection.getMergedArraySync('scripts', pluginDetection.transform.privateAndPublicScriptPaths)
+  .concat(pluginDetection.getMergedArraySync('assets', pluginDetection.transform.privateAndPublicAssetPaths))
+  .concat(pluginDetection.getMergedArraySync('globalAssets', pluginDetection.transform.privateAndPublicGlobalAssetPaths))
+  .forEach(paths => {
+    app.use(paths.publicPath, express.static(paths.privatePath))
+  })
 
 // Set up documentation app
 if (useDocumentation) {
-  var documentationViews = [
-    path.join(__dirname, '/node_modules/govuk-frontend/'),
-    path.join(__dirname, '/node_modules/govuk-frontend/components'),
+  var documentationViews = pluginDetection.getMergedArraySync('nunjucksDirs', pluginDetection.transform.scopeFilePathsToModule).concat([
     path.join(__dirname, '/docs/views/'),
     path.join(__dirname, '/lib/')
-  ]
+  ])
 
   var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, {
     autoescape: true,
