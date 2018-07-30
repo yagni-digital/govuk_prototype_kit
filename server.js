@@ -69,9 +69,7 @@ if (env === 'production' && useAuth === 'true') {
 }
 
 // Set up App
-var appViews = pluginDetection.getMergedArraySync('nunjucksDirs', pluginDetection.scopeFilePathsToModule).concat([
-  path.join(__dirname, '/node_modules/govuk-frontend/'),
-  path.join(__dirname, '/node_modules/govuk-frontend/components'),
+var appViews = pluginDetection.getMergedArraySync('nunjucksDirs', pluginDetection.transform.scopeFilePathsToModule).concat([
   path.join(__dirname, '/app/views/'),
   path.join(__dirname, '/lib/')
 ])
@@ -96,7 +94,9 @@ app.use('/public', express.static(path.join(__dirname, '/public')))
 app.use('/assets', express.static(path.join(__dirname, 'node_modules', 'govuk-frontend', 'assets')))
 
 // Serve govuk-frontend in /public
-app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
+pluginDetection.getMergedArraySync('scripts', pluginDetection.transform.privateAndPublicScriptNames).forEach(paths => {
+  app.use(paths.publicPath, express.static(paths.privatePath))
+})
 
 // Set up documentation app
 if (useDocumentation) {
