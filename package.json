@@ -12,6 +12,7 @@
     "test": "gulp test && npm run lint"
   },
   "dependencies": {
+    "a-mcarey-govuk-plugin": "file:../plugin-test",
     "basic-auth": "^1.0.3",
     "basic-auth-connect": "^1.0.0",
     "body-parser": "^1.14.1",
@@ -30,6 +31,7 @@
     "gulp-sass": "3.1.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-util": "^3.0.7",
+    "hmrc-frontend": "file:../hmrc-frontend-alpha",
     "marked": "^0.3.6",
     "minimist": "1.2.0",
     "notifications-node-client": "^3.0.0",

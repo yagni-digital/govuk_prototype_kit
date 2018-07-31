@@ -69,7 +69,7 @@ if (env === 'production' && useAuth === 'true') {
 }
 
 // Set up App
-var appViews = pluginDetection.getMergedArraySync('nunjucksDirs', pluginDetection.transform.scopeFilePathsToModule).concat([
+var appViews = pluginDetection.getList('nunjucksDirs', pluginDetection.transform.scopeFilePathsToModule).concat([
   path.join(__dirname, '/app/views/'),
   path.join(__dirname, '/lib/')
 ])
@@ -90,17 +90,29 @@ app.set('view engine', 'html')
 // Middleware to serve static assets
 app.use('/public', express.static(path.join(__dirname, '/public')))
 
+app.use((req, res, next) => {
+  res.locals = res.locals || {}
+  Object.assign(res.locals, {
+    pluginConfig: {
+      scripts: pluginDetection.getList('scripts', pluginDetection.transform.publicAssetPaths),
+      stylesheets: pluginDetection.getList('stylesheets', pluginDetection.transform.publicAssetPaths)
+    }
+  })
+  next()
+})
+
 // Serve govuk-frontend in /public
-pluginDetection.getMergedArraySync('scripts', pluginDetection.transform.privateAndPublicScriptPaths)
-  .concat(pluginDetection.getMergedArraySync('assets', pluginDetection.transform.privateAndPublicAssetPaths))
-  .concat(pluginDetection.getMergedArraySync('globalAssets', pluginDetection.transform.privateAndPublicGlobalAssetPaths))
+pluginDetection.getList('scripts', pluginDetection.transform.filesystemPathAndPublicAssetPaths)
+  .concat(pluginDetection.getList('stylesheets', pluginDetection.transform.filesystemPathAndPublicAssetPaths))
+  .concat(pluginDetection.getList('assets', pluginDetection.transform.filesystemPathAndPublicAssetPaths))
+  .concat(pluginDetection.getList('globalAssets', pluginDetection.transform.filesystemPathAndGlobalAssetPaths))
   .forEach(paths => {
-    app.use(paths.publicPath, express.static(paths.privatePath))
+    app.use(paths.publicPath, express.static(paths.filesystemPath))
   })
 
 // Set up documentation app
 if (useDocumentation) {
-  var documentationViews = pluginDetection.getMergedArraySync('nunjucksDirs', pluginDetection.transform.scopeFilePathsToModule).concat([
+  var documentationViews = pluginDetection.getList('nunjucksDirs', pluginDetection.transform.scopeFilePathsToModule).concat([
     path.join(__dirname, '/docs/views/'),
     path.join(__dirname, '/lib/')
   ])

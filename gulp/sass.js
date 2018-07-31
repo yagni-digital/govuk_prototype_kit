@@ -15,7 +15,7 @@ const pluginDetection = require('../lib/plugin-detection')
 const config = require('./config.json')
 
 gulp.task('sass-plugins', function (done) {
-  const fileContents = pluginDetection.getMergedArraySync('sassIncludes', pluginDetection.transform.scopeFilePathsToModule)
+  const fileContents = pluginDetection.getList('sassIncludes', pluginDetection.transform.scopeFilePathsToModule)
     .map(filePath => `@import "${filePath}";`)
     .join('\n')
   fs.writeFile(path.join(config.paths.assets, 'sass', 'allPluginIncludes-generated.scss'), fileContents, done)

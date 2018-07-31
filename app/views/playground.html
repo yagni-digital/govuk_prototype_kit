@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<main id="content">
+  <h1>tmp {% from 'notification-badge/macro.njk' import govukNotificationBadge %}
+
+{{ govukNotificationBadge({
+  "badgeText": 3
+}) }}</h1>
+</main>
+{% endblock %}
