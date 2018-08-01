@@ -69,7 +69,7 @@ if (env === 'production' && useAuth === 'true') {
 }
 
 // Set up App
-var appViews = pluginDetection.getList('nunjucksDirs', pluginDetection.transform.scopeFilePathsToModule).concat([
+var appViews = pluginDetection.getList('nunjucksDirs', pluginDetection.transform.scopeFilePathsToModule).reverse().concat([
   path.join(__dirname, '/app/views/'),
   path.join(__dirname, '/lib/')
 ])
@@ -104,8 +104,8 @@ app.use((req, res, next) => {
 // Serve govuk-frontend in /public
 pluginDetection.getList('scripts', pluginDetection.transform.filesystemPathAndPublicAssetPaths)
   .concat(pluginDetection.getList('stylesheets', pluginDetection.transform.filesystemPathAndPublicAssetPaths))
-  .concat(pluginDetection.getList('assets', pluginDetection.transform.filesystemPathAndPublicAssetPaths))
-  .concat(pluginDetection.getList('globalAssets', pluginDetection.transform.filesystemPathAndGlobalAssetPaths))
+  .concat(pluginDetection.getList('assets', pluginDetection.transform.filesystemPathAndPublicAssetPaths).reverse())
+  .concat(pluginDetection.getList('globalAssets', pluginDetection.transform.filesystemPathAndGlobalAssetPaths).reverse())
   .forEach(paths => {
     app.use(paths.publicPath, express.static(paths.filesystemPath))
   })
