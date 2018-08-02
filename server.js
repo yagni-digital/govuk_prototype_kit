@@ -112,7 +112,7 @@ pluginDetection.getList('scripts', pluginDetection.transform.filesystemPathAndPu
 
 // Set up documentation app
 if (useDocumentation) {
-  var documentationViews = pluginDetection.getList('nunjucksDirs', pluginDetection.transform.scopeFilePathsToModule).concat([
+  var documentationViews = pluginDetection.getList('nunjucksDirs', pluginDetection.transform.scopeFilePathsToModule).reverse().concat([
     path.join(__dirname, '/docs/views/'),
     path.join(__dirname, '/lib/')
   ])
